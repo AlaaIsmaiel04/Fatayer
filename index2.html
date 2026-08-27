@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لَمّة فطاير · دفع</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">ف</span>
+        <div><b>لَمّة فطاير</b><small>طلب واحد، على ذوق الجميع</small></div>
+      </div>
+      <button id="resetBtn" class="outline-btn">↻ تصفير الطلب</button>
+    </header>
+
+    <main class="container">
+      <section class="intro">
+        <div>
+          <small>جلسة الطلب • اليوم</small>
+          <h1>شو نطلب؟</h1>
+          <p>اختاروا الأصناف بجانب الاسم — المجموع يتحدث لحظياً.</p>
+        </div>
+        <div class="hero-count">
+          <strong id="itemCount">0</strong><span>صنف مختار</span>
+        </div>
+      </section>
+
+      <div class="layout">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <h2>الأسماء والطلبات</h2>
+              <p>أضيفوا صنفاً لكل شخص وعدّلوا الكمية.</p>
+            </div>
+            <b id="peopleProgress">0 / 21</b>
+          </div>
+          <div class="tools">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="ابحثوا عن اسم..."
+            />
+            <div id="filters" class="filters"></div>
+          </div>
+          <div id="peopleList"></div>
+        </section>
+
+        <aside class="side">
+          <section class="summary">
+            <small>ملخص اللمّة</small>
+            <h2>الحسبة إلى الآن</h2>
+            <strong id="total">0 ل.س</strong>
+            <div class="stats">
+              <span>الأشخاص المشاركون <b id="activePeople">0 / 21</b></span>
+              <span>عدد الأصناف <b id="summaryItems">0</b></span>
+              <span>متوسط الشخص <b id="average">0 ل.س</b></span>
+            </div>
+            <!-- ✅ section for paid toggle & adjusted total -->
+            <div class="paid-section">
+              <div class="paid-header">
+                <span>✅ من دفع؟</span>
+                <span id="paidCount">0</span>
+              </div>
+              <div id="paidList" class="paid-list"></div>
+              <div class="paid-total-row">
+                <span>المجموع الكلي</span>
+                <b id="totalFull">0 ل.س</b>
+              </div>
+              <div class="paid-total-row adjusted">
+                <span>المجموع بعد الدفع</span>
+                <b id="totalAdjusted">0 ل.س</b>
+              </div>
+            </div>
+            <div class="copy-buttons">
+              <button id="copyBtn" class="primary-btn">
+                📋 نسخ الملخص الكامل
+              </button>
+              <button id="copyItemsBtn" class="primary-btn ghost">
+                📋 نسخ الأصناف فقط
+              </button>
+            </div>
+          </section>
+          <section class="panel menu-panel">
+            <div class="section-head">
+              <div>
+                <h2>قائمة اليوم</h2>
+                <p id="menuCount"></p>
+              </div>
+            </div>
+            <div id="menuList"></div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- FOOTER: Individual order summary -->
+      <footer class="footer-summary">
+        <div class="footer-head">
+          <h3>📋 تفاصيل طلب كل شخص</h3>
+          <span>المبلغ المستحق للدفع</span>
+        </div>
+        <div id="footerList" class="footer-list"></div>
+      </footer>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="script2.js"></script>
+  </body>
+</html>
